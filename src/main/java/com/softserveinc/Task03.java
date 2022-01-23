@@ -30,19 +30,19 @@ public class Task03 {
         do {
             System.out.print(">>> ");
             n = scanner.nextInt();
-            if (n > 0) {
-                arr = Arrays.copyOf(arr, arr.length + 1);
-                arr[arr.length - 1] = n;
-            }
-        } while (n > 0);
+            if (n <= 0)
+                break;
+            arr = Arrays.copyOf(arr, arr.length + 1);
+            arr[arr.length - 1] = n;
+        } while (true);
 
-        int min = 0;
-        for (int i = 1; i < arr.length; i++) {
-            if (arr[i] < arr[min]) {
-                min = i;
-            }
-        }
         if (arr.length != 0) {
+            int min = 0;
+            for (int i = 1; i < arr.length; i++) {
+                if (arr[i] < arr[min]) {
+                    min = i;
+                }
+            }
             System.out.printf("Minimum number is %d\n", arr[min]);
         } else {
             System.out.println("None of valid numbers entered");
